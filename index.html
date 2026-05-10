@@ -11,7 +11,6 @@
 <meta name="theme-color" content="#c440ff">
 <link rel="canonical" href="https://splin.space">
 
-<!-- Open Graph / Discord / VK -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://splin.space">
 <meta property="og:title" content="SPLIN SMP — Minecraft Java 1.21.8">
@@ -19,7 +18,6 @@
 <meta property="og:site_name" content="SPLIN SMP">
 <meta property="og:locale" content="ru_RU">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SPLIN SMP — Minecraft Java 1.21.8">
 <meta name="twitter:description" content="Выживание с уникальными механиками, 7 способностями, экономикой и судебной системой. IP: mc.splin.space:28829">
@@ -28,17 +26,17 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --bg:#08000f;
-  --s1:#110018;
-  --s2:#1a0028;
+  --bg:#0d0119;
+  --s1:#170122;
+  --s2:#200130;
   --acc:#c440ff;
   --acc2:#7b1fa2;
   --pink:#e040fb;
   --blue:#5c6bc0;
-  --text:#f0e6ff;
-  --muted:#8a6aaa;
-  --border:rgba(196,64,255,0.15);
-  --border2:rgba(196,64,255,0.3);
+  --text:#f5eeff;
+  --muted:#9d7bbf;
+  --border:rgba(196,64,255,0.22);
+  --border2:rgba(196,64,255,0.42);
 }
 html{scroll-behavior:smooth;}
 body{
@@ -50,31 +48,30 @@ body{
   overflow-x:hidden;
 }
 
-/* BG ambient */
 body::before{
   content:'';
   position:fixed;inset:0;
   background:
-    radial-gradient(ellipse 60% 40% at 80% 10%, rgba(92,107,192,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(196,64,255,0.09) 0%, transparent 60%);
+    radial-gradient(ellipse 70% 50% at 85% 5%,  rgba(92,107,192,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 15% 85%, rgba(196,64,255,0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(196,64,255,0.05) 0%, transparent 70%);
   pointer-events:none;z-index:0;
 }
 
-/* NAV */
 nav{
   position:sticky;top:0;z-index:100;
-  background:rgba(8,0,15,0.85);
-  backdrop-filter:blur(16px);
+  background:rgba(13,1,25,0.88);
+  backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
   display:flex;align-items:center;
-  padding:0 28px;
+  padding:0 24px;
   height:56px;
 }
 .nav-logo{
   display:flex;align-items:center;gap:10px;
-  padding-right:24px;
+  padding-right:20px;
   border-right:1px solid var(--border);
-  margin-right:8px;
+  flex-shrink:0;
 }
 .nav-logo img{
   width:28px;height:28px;
@@ -86,25 +83,35 @@ nav{
   font-size:10px;color:var(--acc);
   letter-spacing:1px;
 }
+.nav-tabs{
+  flex:1;
+  display:flex;align-items:center;justify-content:center;
+  height:56px;
+}
 .nav-tab{
-  padding:0 16px;height:56px;
+  padding:0 15px;height:56px;
   display:flex;align-items:center;
   color:var(--muted);font-size:13px;font-weight:700;
   cursor:pointer;
   border-bottom:2px solid transparent;
-  transition:color .2s,border-color .2s;
+  transition:color .2s, border-color .25s;
   letter-spacing:.3px;user-select:none;
   white-space:nowrap;
 }
 .nav-tab:hover{color:var(--text);}
 .nav-tab.active{color:var(--acc);border-bottom-color:var(--acc);}
 
-/* PAGES */
 .page{display:none;position:relative;z-index:1;}
-.page.active{display:block;}
+.page.active{
+  display:block;
+  animation:pageFadeIn .35s ease both;
+}
+@keyframes pageFadeIn{
+  from{opacity:0;transform:translateY(10px);}
+  to{opacity:1;transform:translateY(0);}
+}
 
 
-/* ===== HOME ===== */
 .banner-wrap{
   position:relative;
   width:100%;height:260px;
@@ -139,7 +146,11 @@ nav{
   margin:0 auto 20px;
   display:block;
   background:var(--s2);
-  animation:fadeUp .6s ease both;
+  animation:fadeUp .6s ease both, floatAvatar 5s ease-in-out 1s infinite;
+}
+@keyframes floatAvatar{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
 }
 .hero-title{
   font-family:'Press Start 2P',monospace;
@@ -229,7 +240,6 @@ nav{
 }
 .social-btn:hover{border-color:var(--border2);color:var(--text);background:var(--s1);}
 
-/* SERVER STATUS WIDGET */
 .server-status-bar{
   display:flex;align-items:center;justify-content:center;gap:16px;
   margin-bottom:12px;flex-wrap:wrap;
@@ -270,7 +280,6 @@ nav{
   50%{box-shadow:0 0 12px rgba(74,222,128,1);}
 }
 
-/* MAIN VIDEO */
 .hero-video-wrap{
   margin-top:28px;
   border-radius:14px;overflow:hidden;
@@ -286,7 +295,6 @@ nav{
   border:none;
 }
 
-/* GALLERY */
 .gallery-wrap{
   position:relative;
   margin:0 auto;
@@ -344,7 +352,6 @@ nav{
   font-weight:700;pointer-events:none;
 }
 
-/* LORE PAGE */
 .lore-video-wrap{
   border-radius:14px;overflow:hidden;
   border:1px solid var(--border);
@@ -390,7 +397,27 @@ nav{
 }
 .lore-discord-btn:hover{background:rgba(88,101,242,0.25);border-color:rgba(88,101,242,0.7);transform:translateY(-2px);}
 
-/* MAP PAGE */
+.map-embed-wrap{
+  border-radius:14px;overflow:hidden;
+  border:1px solid var(--border);
+  position:relative;
+  background:var(--s1);
+  height:420px;
+}
+.map-embed-wrap iframe{
+  width:100%;height:100%;border:none;display:block;
+}
+.map-embed-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;
+  border-top:1px solid var(--border);
+  font-size:11px;color:var(--muted);
+}
+.map-embed-footer a{
+  color:var(--acc);text-decoration:none;font-weight:700;font-size:11px;
+  transition:opacity .2s;
+}
+.map-embed-footer a:hover{opacity:.75;}
 .map-placeholder{
   background:var(--s1);
   border:1px solid var(--border);
@@ -431,7 +458,6 @@ nav{
 }
 .map-ph-dot{width:7px;height:7px;border-radius:50%;background:var(--muted);}
 
-/* FAQ */
 .faq-section{
   max-width:720px;margin:0 auto;
   padding:48px 28px 64px;
@@ -440,9 +466,9 @@ nav{
   background:var(--s1);border:1px solid var(--border);
   border-radius:14px;margin-bottom:10px;
   overflow:hidden;
-  transition:border-color .2s;
+  transition:border-color .2s, transform .2s, box-shadow .2s;
 }
-.faq-item:hover{border-color:var(--border2);}
+.faq-item:hover{border-color:var(--border2);transform:translateY(-1px);box-shadow:0 4px 20px rgba(196,64,255,0.1);}
 .faq-q{
   width:100%;background:none;border:none;
   display:flex;align-items:center;justify-content:space-between;gap:12px;
@@ -480,7 +506,6 @@ nav{
 .faq-a a{color:var(--acc);text-decoration:underline;word-break:break-all;}
 .faq-a a:hover{color:var(--pink);}
 
-/* FOOTER */
 .site-footer{
   position:relative;z-index:1;
   border-top:1px solid var(--border);
@@ -506,7 +531,6 @@ nav{
   border-top:1px solid var(--border);padding-top:14px;
 }
 
-/* ===== INNER PAGES ===== */
 .inner{max-width:720px;margin:0 auto;padding:28px 28px 48px;}
 .page-head{
   display:flex;align-items:center;gap:16px;
@@ -525,7 +549,6 @@ nav{
 }
 .page-desc{color:var(--muted);font-size:14px;line-height:1.7;margin-top:4px;}
 
-/* CARD GRID */
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
 .card{
   background:var(--s1);border:1px solid var(--border);
@@ -552,7 +575,6 @@ nav{
   color:var(--acc2);font-weight:700;display:block;margin-bottom:4px;
 }
 
-/* RULE BLOCKS */
 .rule-block{margin-bottom:28px;}
 .rule-block-title{
   font-size:10px;font-weight:800;color:var(--acc);
@@ -569,14 +591,13 @@ nav{
 }
 .rule-list li::before{content:'▸';position:absolute;left:0;color:var(--border2);}
 
-/* MECH */
 .mech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
 .mech-card{
   background:var(--s1);border:1px solid var(--border);
   border-radius:14px;padding:18px 20px;
-  transition:border-color .2s;
+  transition:border-color .2s, transform .2s, box-shadow .2s;
 }
-.mech-card:hover{border-color:var(--border2);}
+.mech-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(196,64,255,0.1);}
 .mech-title{
   font-size:10px;font-weight:800;color:var(--acc);
   letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;
@@ -590,7 +611,6 @@ nav{
   color:rgba(220,160,255,0.9);border-radius:0 6px 6px 0;
 }
 
-/* IP BLOCKS inside info */
 .ip-row{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;}
 .ip-inline{
   background:var(--s1);border:1px solid var(--border);border-radius:12px;
@@ -603,14 +623,12 @@ nav{
 .ip-inline-val{font-size:16px;font-weight:800;color:#fff;margin-top:2px;}
 .ip-copy-icon{font-size:16px;color:var(--muted);}
 
-/* DONATE */
 .donate-hero{
   background:var(--s1);border:1px solid var(--border);border-radius:16px;
   padding:36px;text-align:center;margin-bottom:20px;
 }
 .donate-hero p{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:22px;}
 
-/* TOAST */
 .toast{
   position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(10px);
   background:var(--s2);border:1px solid var(--border2);color:var(--text);
@@ -621,7 +639,6 @@ nav{
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-/* ANIMATIONS */
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(18px);}
   to{opacity:1;transform:none;}
@@ -632,12 +649,10 @@ nav{
 }
 .reveal.on{opacity:1;transform:none;}
 
-/* scrollbar */
 ::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
 
-/* PARALLAX CANVAS */
 #parallax-canvas{
   position:fixed;inset:0;
   pointer-events:none;
@@ -645,7 +660,6 @@ nav{
   opacity:.55;
 }
 
-/* SEASON TABS */
 .season-tabs{
   display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap;
 }
@@ -660,7 +674,6 @@ nav{
 .season-panel{display:none;}
 .season-panel.active{display:block;}
 
-/* SEASON META */
 .season-meta{
   display:flex;align-items:center;gap:14px;
   margin-bottom:20px;flex-wrap:wrap;
@@ -685,14 +698,13 @@ nav{
     <img src="data:image/webp;base64,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" alt="Splin">
     <span class="nav-logo-text">СПЛИН</span>
   </div>
-  <div class="nav-tab active" onclick="go('home',this)">Главная</div>
-  <div class="nav-tab" onclick="go('info',this)">Инфо</div>
-  <div class="nav-tab" onclick="go('seasons',this)">Сезоны</div>
-  <div class="nav-tab" onclick="go('rules',this)">Правила</div>
-  <div class="nav-tab" onclick="go('donate',this)">Донат</div>
-  <div class="nav-tab" onclick="go('lore',this)">Сюжет</div>
-  <div class="nav-tab" onclick="go('map',this)">Карта</div>
-  <div class="nav-tab" onclick="go('faq',this)">FAQ</div>
+  <div class="nav-tabs">
+    <div class="nav-tab active" onclick="go('home',this)">Главная</div>
+    <div class="nav-tab" onclick="go('info',this)">Инфо</div>
+    <div class="nav-tab" onclick="go('seasons',this)">Сезоны</div>
+    <div class="nav-tab" onclick="go('donate',this)">Донат</div>
+    <div class="nav-tab" onclick="go('faq',this)">FAQ</div>
+  </div>
 </nav>
 
 
@@ -704,7 +716,6 @@ nav{
   <div class="hero">
     <img class="hero-avatar" src="data:image/webp;base64,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" alt="Splin">
     <div class="hero-title"><span>SPLIN</span> SMP</div>
-    <div class="hero-sub">Minecraft Java 1.21.8</div>
 
     <div class="server-status-bar" id="status-bar">
       <div class="status-pill" id="status-pill">
@@ -721,7 +732,7 @@ nav{
 
     <div class="ip-card" onclick="copyIP('mc.splin.space:28829')">
       <div class="ip-label">IP сервера</div>
-      <div class="ip-val">mc.splin.space:28829</div>
+      <div class="ip-val">splin.space</div>
       <div class="ip-hint">нажми чтобы скопировать</div>
     </div>
 
@@ -733,15 +744,21 @@ nav{
     <div class="tags">
       <span class="tag">Java 1.21.8</span>
       <span class="tag">Пиратка ✓</span>
-      <span class="tag">Выживание</span>
-      <span class="tag">Экономика</span>
-      <span class="tag">Способности</span>
     </div>
 
     <div class="social-row">
-      <a class="social-btn" href="https://youtube.com/@elytrist" target="_blank">▶ YouTube</a>
-      <a class="social-btn" href="https://www.tiktok.com/@elytrist02" target="_blank">♪ TikTok</a>
-      <a class="social-btn" href="https://discord.gg/6qAz8pHfSy" target="_blank">💬 Discord</a>
+      <a class="social-btn" href="https://youtube.com/@elytrist" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        YouTube
+      </a>
+      <a class="social-btn" href="https://www.tiktok.com/@elytrist02" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+        TikTok
+      </a>
+      <a class="social-btn" href="https://discord.gg/6qAz8pHfSy" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.031.052a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        Discord
+      </a>
     </div>
 
     <div class="hero-video-wrap">
@@ -802,12 +819,10 @@ nav{
     <div class="rule-block reveal">
       <div class="rule-block-title">Что тут есть</div>
       <ul class="rule-list">
-        <li>7 уникальных способностей — DELTA, ANT MAN, SHADOW, SPIDER и другие</li>
-        <li>Своя валюта — Монеты. ТЦ на спавне для торговли ресурсами</li>
+        <li>Своя валюта. ТЦ на спавне для торговли ресурсами</li>
         <li>Судебная система — суды каждый четверг в 18:00</li>
         <li>Мап-арты, временные картинки, мировая карта</li>
         <li>Охраняемый спавн в радиусе 400 блоков от 0,0</li>
-        <li>Пиратка поддерживается</li>
       </ul>
     </div>
     <div class="rule-block reveal">
@@ -815,10 +830,53 @@ nav{
       <ul class="rule-list">
         <li>YouTube — @elytrist</li>
         <li>TikTok — @elytrist02</li>
-        <li>Telegram — @moonlighteblani</li>
-        <li>Мониторинг — hotmc.ru</li>
       </ul>
     </div>
+
+    <div style="margin-top:40px;padding-top:32px;border-top:1px solid var(--border);" class="reveal">
+      <div class="page-head" style="margin-bottom:20px;">
+        <div class="page-icon">🗺️</div>
+        <div>
+          <div class="page-title">Карта мира</div>
+          <div class="page-desc">Интерактивная карта SPLIN SMP в реальном времени</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-embed-wrap reveal">
+      <!-- ЗАГЛУШКА: замени YOUR_MAP_URL на адрес карты -->
+      <iframe src="about:blank" title="Карта SPLIN SMP" allowfullscreen></iframe>
+    </div>
+    <div class="map-embed-footer reveal">
+      <span>🗺️ Обновляется в реальном времени</span>
+      <!-- ЗАГЛУШКА: замени href тоже -->
+      <a href="about:blank" target="_blank">Открыть на весь экран ↗</a>
+    </div>
+
+    <div style="margin-top:40px;padding-top:32px;border-top:1px solid var(--border);" class="reveal">
+      <div class="page-head" style="margin-bottom:24px;">
+        <div class="page-icon">📜</div>
+        <div>
+          <div class="page-title">Сюжет</div>
+          <div class="page-desc">Предыстория мира SPLIN SMP и развитие событий</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lore-video-wrap reveal">
+      <iframe src="https://www.youtube.com/embed/hmNW8yEg8EA" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+
+    <div class="lore-placeholder reveal">
+      <div class="lore-update-badge">📡 Сюжет в развитии</div>
+      <div class="lore-placeholder-title">Предыстория</div>
+      <p>Люди жили здесь поколениями, сколько себя помню. Да, бывает, странные вещи происходят, но мы привыкли к ним с детства. Будь то странный шум за горизонтом, как гром среди ясного неба, или странный свет из глубины леса, после которого пропадают люди.</p>
+      <p>Люди. А кто такие люди? Мы не задавали себе этот вопрос — до тех пор, пока не пришлось.</p>
+      <a class="lore-discord-btn" href="https://discord.com/channels/1453795062096990272/1457739221031977104" target="_blank">
+        💬 Следить за обновлениями сюжета в Discord
+      </a>
+    </div>
+
   </div>
 </div>
 
@@ -869,23 +927,6 @@ nav{
 </div>
 
 
-<div class="page" id="pg-rules">
-  <div class="inner">
-    <div class="page-head">
-      <div class="page-icon">📋</div>
-      <div>
-        <div class="page-title">Правила</div>
-        <div class="page-desc">Незнание правил не освобождает от ответственности.</div>
-      </div>
-    </div>
-    <div class="rule-block reveal"><div class="rule-block-title">Общие</div><ul class="rule-list"><li>Правила действуют на всех официальных ресурсах Сплина</li><li>За товары и услуги деньги не возвращаем</li><li>Действуют общие правила Discord</li><li>Решение администрации выше правил</li><li>Нарушения не оправдываются спустя любое время</li><li>Правила могут меняться без уведомления</li></ul></div>
-    <div class="rule-block reveal"><div class="rule-block-title">Discord</div><ul class="rule-list"><li>Запрещено провоцировать и оскорблять</li><li>Запрещена реклама сторонних ресурсов</li><li>Запрещён обман или упоминание администрации без причины</li><li>Запрещены призывы покинуть сервер</li><li>Флуд и спам — только в ⁠🧾・флудилка</li></ul></div>
-    <div class="rule-block reveal"><div class="rule-block-title">Между игроками</div><ul class="rule-list"><li>Запрещено мешать стримерам во время трансляций</li><li>Запрещены твинки, передача аккаунтов, нечитаемые ники</li><li>Строго запрещено крупное гриферство</li><li>Нельзя несогласованно использовать чужие фермы и жителей</li><li>За взрывоопасные объекты отвечает тот, кто устанавливает</li><li>Спавн — архипелаг 400 блоков от 0,0. Строить только с разрешения</li></ul></div>
-    <div class="rule-block reveal"><div class="rule-block-title">Игровой процесс</div><ul class="rule-list"><li>Разрешён только дюп энтити динамита</li><li>Запрещено использовать баги с сильным преимуществом</li><li>Разрешены: миникарты, лайтматика, подсветка руды, полная яркость и др.</li><li>Запрещены: X-Ray, Baritone, авто-тотем, фрикамы, Chest Tracker, любые читы</li><li>Запрещено хранить огромное кол-во мобов на одной базе</li></ul></div>
-    <div class="rule-block reveal"><div class="rule-block-title">Экономика</div><ul class="rule-list"><li>Валюта — Монеты</li><li>ТЦ на спавне — продавай ресурсы за монеты</li><li>Залежавшийся мусор на точке конфискует Мэр</li><li>Неполная оплата = кража. Возврат только с согласия продавца</li></ul></div>
-    <div class="rule-block reveal"><div class="rule-block-title">Судебная система</div><ul class="rule-list"><li>Суды каждый четверг в 18:00</li><li>Рассматриваются заявки за всю неделю</li><li>Адвокатом может стать любой игрок</li><li>Наказания: розыск, штраф, исправ. работы, бан</li></ul></div>
-  </div>
-</div>
 
 
 <div class="page" id="pg-donate">
@@ -913,56 +954,6 @@ nav{
   </div>
 </div>
 
-<!-- LORE PAGE -->
-<div class="page" id="pg-lore">
-  <div class="inner">
-    <div class="page-head">
-      <div class="page-icon">📜</div>
-      <div>
-        <div class="page-title">Сюжет</div>
-        <div class="page-desc">Предыстория мира SPLIN SMP и развитие событий</div>
-      </div>
-    </div>
-
-    <div class="lore-video-wrap reveal">
-      <iframe src="https://www.youtube.com/embed/hmNW8yEg8EA" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-    </div>
-
-    <div class="lore-placeholder reveal">
-      <div class="lore-update-badge">📡 Сюжет в развитии</div>
-      <div class="lore-placeholder-title">Предыстория</div>
-      <p>Люди жили здесь поколениями, сколько себя помню. Да, бывает, странные вещи происходят, но мы привыкли к ним с детства. Будь то странный шум за горизонтом, как гром среди ясного неба, или странный свет из глубины леса, после которого пропадают люди.</p>
-      <p>Люди. А кто такие люди? Мы не задавали себе этот вопрос — до тех пор, пока не пришлось.</p>
-      <a class="lore-discord-btn" href="https://discord.com/channels/1453795062096990272/1457739221031977104" target="_blank">
-        💬 Следить за обновлениями сюжета в Discord
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- MAP PAGE -->
-<div class="page" id="pg-map">
-  <div class="inner">
-    <div class="page-head">
-      <div class="page-icon">🗺️</div>
-      <div>
-        <div class="page-title">Карта</div>
-        <div class="page-desc">Интерактивная карта мира SPLIN SMP в реальном времени</div>
-      </div>
-    </div>
-    <div class="map-placeholder reveal">
-      <div class="map-grid-bg"></div>
-      <span class="map-ph-icon">🗺️</span>
-      <div class="map-ph-title">Карта в разработке</div>
-      <p class="map-ph-desc">Интерактивная карта мира скоро появится здесь. Карта обновляется в реальном времени и показывает весь мир SPLIN SMP.</p>
-      <div class="map-ph-badge">
-        <span class="map-ph-dot"></span>
-        Скоро
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="page" id="pg-faq">
   <div class="faq-section">
     <div class="page-head">
@@ -973,7 +964,6 @@ nav{
       </div>
     </div>
 
-    <!-- 🚀 Вход и технические вопросы -->
     <div class="faq-category reveal">🚀 Вход и технические вопросы</div>
 
     <div class="faq-item reveal" onclick="toggleFaq(this)">
@@ -1000,7 +990,6 @@ nav{
       <div class="faq-a"><p>Да. У нас установлен <a href="https://modrinth.com/plugin/simple-voice-chat/versions" target="_blank">Simple Voice Chat</a>.</p></div>
     </div>
 
-    <!-- 📜 Информация о сервере и механиках -->
     <div class="faq-category reveal">📜 Информация о сервере и механиках</div>
 
     <div class="faq-item reveal" onclick="toggleFaq(this)">
@@ -1009,6 +998,14 @@ nav{
         <span class="faq-chevron">▾</span>
       </button>
       <div class="faq-a"><p>Первый сезон SPLIN начался 17 октября 2025 года. Но история тянется годами. Точную цифру никто уже и не помнит, но до SPLINа были и другие проекты. Так что многолетний опыт у администрации присутствует — в этом можете быть уверены.</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Есть ли карта мира?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Да! Интерактивная карта встроена прямо на сайте — открой вкладку <strong>Инфо</strong> и прокрути вниз. Там можно полазить по миру и посмотреть что где находится.</p></div>
     </div>
 
     <div class="faq-item reveal" onclick="toggleFaq(this)">
@@ -1027,7 +1024,6 @@ nav{
       <div class="faq-a"><p>Точной информации нет ни у кого — гарантируем. Даже сам владелец не знает наверняка. Но можете быть уверены в том, что каждый сезон связан с предыдущим и следующим. Потому вайп — лишь необходимая мера очистить мир от скопившегося мусора. Сюжет же не остановить.</p></div>
     </div>
 
-    <!-- 📖 Сюжет, лор и ролеплей -->
     <div class="faq-category reveal">📖 Сюжет, лор и ролеплей</div>
 
     <div class="faq-item reveal" onclick="toggleFaq(this)">
@@ -1046,7 +1042,6 @@ nav{
       <div class="faq-a"><p>Конечно! Желающих очень много, и следующей командой, которая будет исследовать сюжет, можете стать именно вы и ваши друзья! Для этого можно просто создать свой клан и трудиться для того, чтобы узнать новое.</p></div>
     </div>
 
-    <!-- 💰 Экономика и игровые предметы -->
     <div class="faq-category reveal">💰 Экономика и игровые предметы</div>
 
     <div class="faq-item reveal" onclick="toggleFaq(this)">
@@ -1065,8 +1060,15 @@ nav{
       <div class="faq-a"><p>Хороший вопрос, ведь оно является основой всех способностей! Ваш ответ уже лежит здесь: <a href="https://discord.com/channels/1453795062096990272/1457739221031977104" target="_blank">канал в Дискорде</a>. Прочитайте внимательно и точно сможете найти ответ на свой вопрос!</p></div>
     </div>
 
-    <!-- ⚖️ Правила и модерация -->
     <div class="faq-category reveal">⚖️ Правила и модерация</div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Какие правила на сервере?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>С правилами проекта можно ознакомиться в Дискорде: <a href="https://discord.com/channels/1453795062096990272/1453795063569060007" target="_blank">открыть правила</a>.</p></div>
+    </div>
 
     <div class="faq-item reveal" onclick="toggleFaq(this)">
       <button class="faq-q">
@@ -1097,7 +1099,6 @@ nav{
 <div class="toast" id="toast">✓ Скопировано</div>
 
 <script>
-/* PARALLAX CANVAS */
 (function(){
   var c=document.getElementById('parallax-canvas');
   var ctx=c.getContext('2d');
@@ -1168,11 +1169,14 @@ nav{
   draw();
 })();
 
-/* NAV */
 function go(id, el){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
   document.querySelectorAll('.nav-tab').forEach(function(t){t.classList.remove('active');});
-  document.getElementById('pg-'+id).classList.add('active');
+  var pg = document.getElementById('pg-'+id);
+  pg.classList.add('active');
+  pg.style.animation = 'none';
+  pg.offsetHeight;
+  pg.style.animation = '';
   el.classList.add('active');
   window.scroll({top:0,left:0,behavior:'instant'});
   document.documentElement.scrollTop = 0;
@@ -1185,7 +1189,6 @@ function go(id, el){
   }, 0);
 }
 
-/* COPY IP */
 function copyIP(ip){
   navigator.clipboard.writeText(ip).catch(function(){});
   var t=document.getElementById('toast');
@@ -1193,7 +1196,6 @@ function copyIP(ip){
   setTimeout(function(){t.classList.remove('show');},1800);
 }
 
-/* REVEAL */
 function runReveal(){
   var els=document.querySelectorAll('.page.active .reveal');
   els.forEach(function(el,i){
@@ -1201,7 +1203,6 @@ function runReveal(){
   });
 }
 
-/* SEASONS */
 function showSeason(n, el){
   document.querySelectorAll('.season-tab').forEach(function(t){t.classList.remove('active');});
   document.querySelectorAll('.season-panel').forEach(function(p){p.classList.remove('active');});
@@ -1210,39 +1211,77 @@ function showSeason(n, el){
   setTimeout(runReveal,50);
 }
 
-/* GALLERY */
 (function(){
-  var total = 7;
-  var cur = 0;
+  var REAL = 7;
   var track = document.getElementById('gallery-track');
   var dotsEl = document.getElementById('gallery-dots');
   var curEl = document.getElementById('gal-cur');
-  var dots = [];
 
-  for(var i=0;i<total;i++){
+  var slides = track.querySelectorAll('.gallery-slide');
+  var firstClone = slides[0].cloneNode(true);
+  var lastClone  = slides[REAL-1].cloneNode(true);
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+
+  var pos = 1; 
+  var transitioning = false;
+
+  function setPos(p, animate){
+    if(animate === false){
+      track.style.transition = 'none';
+    } else {
+      track.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
+    }
+    track.style.transform = 'translateX(-'+(p*100)+'%)';
+    pos = p;
+  }
+
+  var dots = [];
+  for(var i=0;i<REAL;i++){
     var d = document.createElement('div');
-    d.className='gallery-dot'+(i===0?' active':'');
-    (function(idx){d.addEventListener('click',function(){galTo(idx);});})(i);
+    d.className = 'gallery-dot'+(i===0?' active':'');
+    (function(idx){ d.addEventListener('click', function(){ if(!transitioning) goTo(idx+1); }); })(i);
     dotsEl.appendChild(d);
     dots.push(d);
   }
 
-  window.galMove = function(dir){
-    galTo((cur+dir+total)%total);
-  };
-  function galTo(idx){
-    cur=idx;
-    track.style.transform='translateX(-'+(cur*100)+'%)';
-    dots.forEach(function(d,i){d.className='gallery-dot'+(i===cur?' active':'');});
-    if(curEl) curEl.textContent = cur+1;
+  function updateUI(){
+    var realIdx = pos - 1;
+    dots.forEach(function(d,i){ d.className = 'gallery-dot'+(i===realIdx?' active':''); });
+    if(curEl) curEl.textContent = realIdx+1;
   }
 
-  // Auto-advance
-  var timer = setInterval(function(){ galTo((cur+1)%total); }, 4500);
-  document.getElementById('gallery-section').addEventListener('mouseenter',function(){clearInterval(timer);});
+  function goTo(p){
+    if(transitioning) return;
+    transitioning = true;
+    setPos(p, true);
+    updateUI();
+  }
+
+  track.addEventListener('transitionend', function(){
+    if(pos === 0){
+      setPos(REAL, false);
+    } else if(pos === REAL+1){
+      setPos(1, false);
+    }
+    transitioning = false;
+  });
+
+  setPos(1, false);
+  updateUI();
+
+  window.galMove = function(dir){
+    goTo(pos + dir);
+  };
+
+  /* Auto-advance */
+  var timer = setInterval(function(){ goTo(pos+1); }, 4500);
+  document.getElementById('gallery-section').addEventListener('mouseenter', function(){ clearInterval(timer); });
+  document.getElementById('gallery-section').addEventListener('mouseleave', function(){
+    timer = setInterval(function(){ goTo(pos+1); }, 4500);
+  });
 })();
 
-/* SERVER STATUS */
 (function(){
   var API = 'https://api.mcsrvstat.us/3/mc.splin.space:28829';
   function setStatus(online, players, max){
@@ -1266,13 +1305,10 @@ function showSeason(n, el){
     setStatus(false);
   });
 })();
-
-/* FAQ TOGGLE */
 function toggleFaq(item){
   item.classList.toggle('open');
 }
 
-/* CONSOLE CREDITS */
 (function(){
   var s = [
     'background:#08000f;color:#c440ff;font-size:14px;font-weight:bold;padding:6px 12px;border-left:3px solid #c440ff;',
