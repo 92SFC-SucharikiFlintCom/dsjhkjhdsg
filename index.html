@@ -214,7 +214,7 @@ nav{
 .btn-outline:hover{border-color:var(--acc);background:rgba(196,64,255,0.07);transform:translateY(-2px);}
 
 .tags{
-  display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+  display:flex;gap:8px;justify-content:flex-start;flex-wrap:wrap;
   margin-top:20px;
   animation:fadeUp .6s .3s ease both;
 }
@@ -1261,8 +1261,10 @@ function showSeason(n, el){
   track.addEventListener('transitionend', function(){
     if(pos === 0){
       setPos(REAL, false);
+      updateUI();
     } else if(pos === REAL+1){
       setPos(1, false);
+      updateUI();
     }
     transitioning = false;
   });
