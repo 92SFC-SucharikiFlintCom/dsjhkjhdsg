@@ -479,6 +479,28 @@ nav{
 .faq-category:first-child{margin-top:0;}
 .faq-a a{color:var(--acc);text-decoration:underline;word-break:break-all;}
 .faq-a a:hover{color:var(--pink);}
+
+/* FOOTER */
+.site-footer{
+  position:relative;z-index:1;
+  border-top:1px solid var(--border);
+  padding:18px 28px;
+  text-align:center;
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:.4px;
+  opacity:0.55;
+  transition:opacity .25s;
+}
+.site-footer:hover{opacity:1;}
+.site-footer a{
+  color:var(--muted);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:color .2s, border-color .2s;
+}
+.site-footer a:hover{color:var(--acc);border-bottom-color:var(--acc);}
+.site-footer .footer-sep{margin:0 8px;opacity:.4;}
 .faq-a p{
   color:rgba(210,170,255,0.82);font-size:13px;line-height:1.65;
   border-top:1px solid var(--border);padding-top:14px;
@@ -1065,6 +1087,12 @@ nav{
   </div>
 </div>
 
+<footer class="site-footer">
+  Сделано с ♥ by <a href="https://sfc.is-a.dev/" target="_blank">SFC</a> &amp; <a href="https://sfc.is-a.dev/" target="_blank">SFC Team</a>
+  <span class="footer-sep">·</span>
+  SPLIN SMP © 2025
+</footer>
+
 <canvas id="parallax-canvas"></canvas>
 <div class="toast" id="toast">✓ Скопировано</div>
 
@@ -1243,6 +1271,20 @@ function showSeason(n, el){
 function toggleFaq(item){
   item.classList.toggle('open');
 }
+
+/* CONSOLE CREDITS */
+(function(){
+  var s = [
+    'background:#08000f;color:#c440ff;font-size:14px;font-weight:bold;padding:6px 12px;border-left:3px solid #c440ff;',
+    'background:#08000f;color:#8a6aaa;font-size:11px;padding:4px 12px;',
+    'background:#08000f;color:#5c6bc0;font-size:11px;padding:4px 12px;',
+    'background:#08000f;color:#8a6aaa;font-size:11px;padding:2px 12px 6px;'
+  ];
+  console.log('%c⚡ SPLIN SMP — splin.space', s[0]);
+  console.log('%c  Сайт сделан SFC & SFC Team', s[1]);
+  console.log('%c  https://sfc.is-a.dev/', s[2]);
+  console.log('%c  Руки прочь от кода 🙃', s[3]);
+})();
 
 document.addEventListener('DOMContentLoaded',function(){
   var s1=document.getElementById('s1');
