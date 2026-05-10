@@ -103,6 +103,7 @@ nav{
 .page{display:none;position:relative;z-index:1;}
 .page.active{display:block;}
 
+
 /* ===== HOME ===== */
 .banner-wrap{
   position:relative;
@@ -715,28 +716,27 @@ nav{
       <iframe src="https://www.youtube.com/embed/qZQVB4WvSgc" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
   </div>
-</div>
 
-<!-- GALLERY -->
-<div class="gallery-wrap reveal" id="gallery-section">
-  <div style="font-size:10px;font-weight:800;color:var(--acc);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:16px;">Скриншоты</div>
-  <div style="position:relative;">
-    <div class="gallery-track-outer">
-      <div class="gallery-track" id="gallery-track">
-        <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/kl/5j3glqa3qv3ys40rsmckgd37kidruxqce12idb3v1rzecqb0ct5t881767645698.png" alt="SPLIN SMP скриншот 1" loading="lazy"><div class="gallery-overlay"></div></div>
-        <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/ct/z65p18cngmt6gol4u6jhvivuyqyqk05lqnaarecb2y9wxuylbn7k7h1767645699.png" alt="SPLIN SMP скриншот 2" loading="lazy"><div class="gallery-overlay"></div></div>
-        <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/yz/mfhe1p6fdxshs3bhwjjaj3e24ynd55r0etah6am7fpe13ucyxpfxvp1767645699.png" alt="SPLIN SMP скриншот 3" loading="lazy"><div class="gallery-overlay"></div></div>
-        <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/im/894t2wnm2o8aihu4n7uw14klv40ruulixe69jioi6thy8nflf8mn1h1767645700.png" alt="SPLIN SMP скриншот 4" loading="lazy"><div class="gallery-overlay"></div></div>
-        <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/ij/egehv7b0cle8j5p81uf5sdx1gncqd1rml931liaoh7emjpukmpq3ef1767645933.png" alt="SPLIN SMP скриншот 5" loading="lazy"><div class="gallery-overlay"></div></div>
-        <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/un/i3cesr8t9pt3ycvzjpgfw38ydley4vg404lm8ft6iv42b4rnundxx61767645966.png" alt="SPLIN SMP скриншот 6" loading="lazy"><div class="gallery-overlay"></div></div>
-        <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/gv/5oiqatkvddc04q6qeakxnuthaecq8gsyr8lmakdel4trw4fgpsj5q11767645972.png" alt="SPLIN SMP скриншот 7" loading="lazy"><div class="gallery-overlay"></div></div>
+  <div class="gallery-wrap" id="gallery-section">
+    <div style="font-size:10px;font-weight:800;color:var(--acc);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:16px;">Скриншоты</div>
+    <div style="position:relative;">
+      <div class="gallery-track-outer">
+        <div class="gallery-track" id="gallery-track">
+          <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/kl/5j3glqa3qv3ys40rsmckgd37kidruxqce12idb3v1rzecqb0ct5t881767645698.png" alt="SPLIN SMP скриншот 1" loading="lazy"><div class="gallery-overlay"></div></div>
+          <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/ct/z65p18cngmt6gol4u6jhvivuyqyqk05lqnaarecb2y9wxuylbn7k7h1767645699.png" alt="SPLIN SMP скриншот 2" loading="lazy"><div class="gallery-overlay"></div></div>
+          <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/yz/mfhe1p6fdxshs3bhwjjaj3e24ynd55r0etah6am7fpe13ucyxpfxvp1767645699.png" alt="SPLIN SMP скриншот 3" loading="lazy"><div class="gallery-overlay"></div></div>
+          <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/im/894t2wnm2o8aihu4n7uw14klv40ruulixe69jioi6thy8nflf8mn1h1767645700.png" alt="SPLIN SMP скриншот 4" loading="lazy"><div class="gallery-overlay"></div></div>
+          <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/ij/egehv7b0cle8j5p81uf5sdx1gncqd1rml931liaoh7emjpukmpq3ef1767645933.png" alt="SPLIN SMP скриншот 5" loading="lazy"><div class="gallery-overlay"></div></div>
+          <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/un/i3cesr8t9pt3ycvzjpgfw38ydley4vg404lm8ft6iv42b4rnundxx61767645966.png" alt="SPLIN SMP скриншот 6" loading="lazy"><div class="gallery-overlay"></div></div>
+          <div class="gallery-slide"><img src="https://fs.hotmc.ru/upload/gv/5oiqatkvddc04q6qeakxnuthaecq8gsyr8lmakdel4trw4fgpsj5q11767645972.png" alt="SPLIN SMP скриншот 7" loading="lazy"><div class="gallery-overlay"></div></div>
+        </div>
+        <div class="gallery-counter"><span id="gal-cur">1</span> / 7</div>
       </div>
-      <div class="gallery-counter"><span id="gal-cur">1</span> / 7</div>
+      <button class="gallery-btn prev" onclick="galMove(-1)">‹</button>
+      <button class="gallery-btn next" onclick="galMove(1)">›</button>
     </div>
-    <button class="gallery-btn prev" onclick="galMove(-1)">‹</button>
-    <button class="gallery-btn next" onclick="galMove(1)">›</button>
+    <div class="gallery-dots" id="gallery-dots"></div>
   </div>
-  <div class="gallery-dots" id="gallery-dots"></div>
 </div>
 
 
@@ -1033,10 +1033,15 @@ function go(id, el){
   document.querySelectorAll('.nav-tab').forEach(function(t){t.classList.remove('active');});
   document.getElementById('pg-'+id).classList.add('active');
   el.classList.add('active');
+  window.scroll({top:0,left:0,behavior:'instant'});
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
-  document.querySelectorAll('#pg-'+id+' .reveal').forEach(function(el){el.classList.remove('on');});
-  setTimeout(runReveal,10);
+  document.querySelectorAll('#pg-'+id+' .reveal').forEach(function(r){r.classList.remove('on');});
+  setTimeout(function(){
+    window.scroll({top:0,left:0,behavior:'instant'});
+    document.documentElement.scrollTop = 0;
+    runReveal();
+  }, 0);
 }
 
 /* COPY IP */
