@@ -466,9 +466,19 @@ nav{
   padding:0 20px;
 }
 .faq-item.open .faq-a{
-  max-height:400px;
+  max-height:600px;
   padding:0 20px 18px;
 }
+.faq-category{
+  font-size:11px;font-weight:800;
+  color:var(--acc);letter-spacing:2px;text-transform:uppercase;
+  padding:6px 4px 10px;margin-top:24px;margin-bottom:4px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+}
+.faq-category:first-child{margin-top:0;}
+.faq-a a{color:var(--acc);text-decoration:underline;word-break:break-all;}
+.faq-a a:hover{color:var(--pink);}
 .faq-a p{
   color:rgba(210,170,255,0.82);font-size:13px;line-height:1.65;
   border-top:1px solid var(--border);padding-top:14px;
@@ -808,7 +818,7 @@ nav{
     <div class="season-panel" id="s1">
       <div class="season-meta reveal">
         <div class="season-badge">ТЕКУЩИЙ</div>
-        <div class="season-dates">1 сентября 1939 — 2 сентября 1945</div>
+        <div class="season-dates">17 октября 2025 — сейчас</div>
       </div>
 
       <div class="rule-block-title" style="font-size:10px;font-weight:800;color:var(--acc);text-transform:uppercase;letter-spacing:2.5px;padding-bottom:10px;margin:28px 0 14px;border-bottom:1px solid var(--border);">Способности</div>
@@ -937,16 +947,119 @@ nav{
       <div class="page-icon">❓</div>
       <div>
         <div class="page-title">FAQ</div>
-        <div class="page-desc">Часто задаваемые вопросы. Содержание появится позже.</div>
+        <div class="page-desc">Часто задаваемые вопросы об игре на сервере.</div>
       </div>
+    </div>
+
+    <!-- 🚀 Вход и технические вопросы -->
+    <div class="faq-category reveal">🚀 Вход и технические вопросы</div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Почему я ещё не на сервере? (Как долго одобряют заявки / добавляют в вайтлист?)
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Чтобы попасть на сервер, сперва нужно подать заявку в Дискорде. Одобрение заявок происходит так быстро, как только возможно, но при большом притоке игроков это может немного затянуться. Наберитесь терпения, наши администраторы делают всё возможное ❤️</p></div>
     </div>
 
     <div class="faq-item reveal" onclick="toggleFaq(this)">
       <button class="faq-q">
-        Здесь скоро появятся вопросы и ответы
+        Не могу зайти на сервер, что делать? (Решение проблем с подключением)
         <span class="faq-chevron">▾</span>
       </button>
-      <div class="faq-a"><p>Раздел FAQ находится в разработке. Если у тебя есть вопрос — напиши в Discord или Telegram администрации.</p></div>
+      <div class="faq-a"><p>Попробуйте проверить версию игры, IP-адрес сервера, а также включить/выключить VPN. Если это не помогает — создайте топик на форуме «Поддержка» в Дискорде!</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Есть ли мод на голосовой чат (войс)?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Да. У нас установлен <a href="https://modrinth.com/plugin/simple-voice-chat/versions" target="_blank">Simple Voice Chat</a>.</p></div>
+    </div>
+
+    <!-- 📜 Информация о сервере и механиках -->
+    <div class="faq-category reveal">📜 Информация о сервере и механиках</div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Как давно работает сервер?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Первый сезон SPLIN начался 17 октября 2025 года. Но история тянется годами. Точную цифру никто уже и не помнит, но до SPLINа были и другие проекты. Так что многолетний опыт у администрации присутствует — в этом можете быть уверены.</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Насколько сервер ванильный? (Какие установлены плагины и моды?)
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Для игры на сервере не нужно скачивать ни одного мода. Желательно, но не обязательно! С модами, которые стоит (но не обязательно) использовать, вы можете ознакомиться в канале «Информация» в Дискорде.</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Когда планируется вайп?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Точной информации нет ни у кого — гарантируем. Даже сам владелец не знает наверняка. Но можете быть уверены в том, что каждый сезон связан с предыдущим и следующим. Потому вайп — лишь необходимая мера очистить мир от скопившегося мусора. Сюжет же не остановить.</p></div>
+    </div>
+
+    <!-- 📖 Сюжет, лор и ролеплей -->
+    <div class="faq-category reveal">📖 Сюжет, лор и ролеплей</div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Как у вас реализован сюжет и система способностей?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Все плагины и сюжет у нас реализованы через серверные плагины, которые трудолюбиво создают разработчики. Это избавляет вас от необходимости скачивать лишние моды и поддерживает атмосферу ванильного и лампового майнкрафта.</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Существуют ли игровые организации или фракции, исследующие сюжет?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Конечно! Желающих очень много, и следующей командой, которая будет исследовать сюжет, можете стать именно вы и ваши друзья! Для этого можно просто создать свой клан и трудиться для того, чтобы узнать новое.</p></div>
+    </div>
+
+    <!-- 💰 Экономика и игровые предметы -->
+    <div class="faq-category reveal">💰 Экономика и игровые предметы</div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Что такое монеты (местная валюта) и как их заработать?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Монеты — замена привычным АРам и прочим валютам. Грубо говоря, это перекрашенный предмет, который изготавливает администрация. Подделать невозможно =) Получить стартовый капитал можно на спавне, а в дальнейшем заработать или потратить — на базаре или непосредственно в сделках с самими игроками.</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Где взять энергомасло?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Хороший вопрос, ведь оно является основой всех способностей! Ваш ответ уже лежит здесь: <a href="https://discord.com/channels/1453795062096990272/1457739221031977104" target="_blank">канал в Дискорде</a>. Прочитайте внимательно и точно сможете найти ответ на свой вопрос!</p></div>
+    </div>
+
+    <!-- ⚖️ Правила и модерация -->
+    <div class="faq-category reveal">⚖️ Правила и модерация</div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Меня убили / загриферили, куда можно пожаловаться?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>В Дискорде есть отдельный форум — <a href="https://discord.com/channels/1453795062096990272/1453795064605311009" target="_blank">«Суд»</a>. Ознакомьтесь с формой заявки и создайте свою. Будьте уверены — нарушитель получит своё наказание. Суды проходят каждый четверг!</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        У меня другой вопрос — куда обратиться?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>По остальным вопросам не стесняйтесь обращаться в чат или же на форум <a href="https://discord.com/channels/1453795062096990272/1453795064584077597" target="_blank">«Поддержка»</a> в Дискорде.</p></div>
     </div>
 
   </div>
