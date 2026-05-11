@@ -85,8 +85,8 @@ nav{
   letter-spacing:1px;
 }
 .nav-tabs{
-  flex:1;
-  display:flex;align-items:center;justify-content:flex-start;
+  position:absolute;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;justify-content:center;
   height:56px;
 }
 .nav-tab{
@@ -939,19 +939,71 @@ nav{
         <div class="page-desc">Поддержи сервер — это помогает развитию и стабильной работе.</div>
       </div>
     </div>
-    <div class="donate-hero reveal">
-      <p>Ссылка на донат появится скоро.<br>По вопросам пиши в Telegram или Discord.</p>
+
+    <!-- ONE-TIME -->
+    <div class="rule-block-title reveal" style="margin-bottom:16px;">🔓 Навсегда</div>
+    <div class="donate-cards reveal" style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:36px;">
+      <div class="donate-card" style="flex:1;min-width:220px;background:linear-gradient(135deg,rgba(196,64,255,0.10),rgba(92,107,192,0.10));border:1px solid var(--border2);border-radius:16px;padding:24px 22px;">
+        <div style="font-size:22px;margin-bottom:8px;">🚪</div>
+        <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:6px;">Проходка на сервер</div>
+        <div style="font-size:26px;font-weight:900;color:var(--acc);margin-bottom:12px;">200 ₽</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;">Единоразовый доступ к серверу — навсегда.</div>
+      </div>
+    </div>
+
+    <!-- MONTHLY -->
+    <div class="rule-block-title reveal" style="margin-bottom:16px;">📅 Подписка на месяц</div>
+    <div class="donate-cards reveal" style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:12px;">
+
+      <!-- Prime -->
+      <div class="donate-card" style="flex:1;min-width:260px;background:linear-gradient(135deg,rgba(196,64,255,0.13),rgba(30,0,50,0.6));border:1px solid var(--border2);border-radius:16px;padding:24px 22px;position:relative;">
+        <div style="font-size:22px;margin-bottom:8px;">⭐</div>
+        <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:4px;">Prime</div>
+        <div style="font-size:26px;font-weight:900;color:var(--acc);margin-bottom:6px;">300 ₽</div>
+        <div style="display:inline-block;background:linear-gradient(90deg,var(--acc),var(--pink));color:#fff;font-size:11px;font-weight:800;padding:3px 12px;border-radius:20px;letter-spacing:1px;margin-bottom:12px;">НАВСЕГДА</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--acc);">✦</span> /co i — просмотр взаимодействий с блоками</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--acc);">✦</span> Динамическая карта</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--acc);">✦</span> Новый стиль ника</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--acc);">✦</span> Значок в табе</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--acc);">✦</span> Роль в Discord</li>
+        </ul>
+      </div>
+
+      <!-- Prime+ -->
+      <div class="donate-card" style="flex:1;min-width:260px;background:linear-gradient(135deg,rgba(224,64,251,0.18),rgba(30,0,60,0.7));border:2px solid var(--pink);border-radius:16px;padding:24px 22px;position:relative;">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;font-size:11px;font-weight:800;padding:3px 14px;border-radius:20px;letter-spacing:1px;white-space:nowrap;">ЛУЧШИЙ ВЫБОР</div>
+        <div style="font-size:22px;margin-bottom:8px;">🌟</div>
+        <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:4px;">Prime<span style="color:var(--pink);">+</span></div>
+        <div style="font-size:26px;font-weight:900;color:var(--pink);margin-bottom:14px;">150 ₽<span style="font-size:13px;font-weight:600;color:var(--muted);">/мес</span></div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;font-style:italic;"><span style="color:var(--pink);">✦</span> Всё из Prime</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> /co near — просмотр любых взаимодействий рядом с вами</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Градиент ника на выбор</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Градиентный значок в табе</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Скрыть себя на динамической карте</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Префикс в чате</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Чат «Черновик» — новости и планы заранее</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Доступ к категории «Архив»</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Войс-чат с администрацией</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bundle discount -->
+    <div class="reveal" style="background:linear-gradient(90deg,rgba(196,64,255,0.12),rgba(224,64,251,0.12));border:1px dashed var(--border2);border-radius:12px;padding:14px 20px;margin-bottom:32px;display:flex;align-items:center;gap:14px;">
+      <div style="font-size:24px;">🎁</div>
+      <div>
+        <div style="font-weight:800;color:#fff;font-size:14px;">Пакет Prime + Prime+</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:3px;">При покупке обоих сразу — скидка <span style="color:var(--acc);font-weight:800;">20%</span></div>
+      </div>
+    </div>
+
+    <div class="rule-block reveal"><div class="rule-block-title">Важно</div><ul class="rule-list"><li>За товары и услуги деньги не возвращаем</li><li>Цены могут изменяться без предупреждения</li><li>По всем вопросам — в Telegram или Discord</li></ul></div>
+
+    <div class="donate-hero reveal" style="margin-top:24px;">
       <a class="btn-primary" href="https://discord.gg/6qAz8pHfSy" target="_blank">Написать администрации</a>
     </div>
-
-    <div class="rule-block reveal">
-      <div class="rule-block-title">Плюшки для донатеров</div>
-      <ul class="rule-list">
-        <li style="color:rgba(196,64,255,0.45);font-style:italic;">Информация о привилегиях появится скоро — следите за обновлениями</li>
-      </ul>
-    </div>
-
-    <div class="rule-block reveal"><div class="rule-block-title">Важно</div><ul class="rule-list"><li>За товары и услуги деньги не возвращаем</li><li>По всем вопросам — в Telegram или Discord</li></ul></div>
   </div>
 </div>
 
