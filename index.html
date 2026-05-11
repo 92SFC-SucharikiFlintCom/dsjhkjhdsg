@@ -727,7 +727,7 @@ nav{
       <div class="status-pill" id="online-pill">
         <span class="status-label">Онлайн:</span>
         <span class="online-count" id="online-count">—</span>
-        <span class="status-value" style="color:var(--muted);font-size:11px;" id="online-max"></span>
+        <span class="status-value" style="color:var(--muted);" id="online-max"></span>
       </div>
     </div>
 
@@ -1043,6 +1043,14 @@ nav{
       <div class="faq-a"><p>Да. У нас установлен <a href="https://modrinth.com/plugin/simple-voice-chat/versions" target="_blank">Simple Voice Chat</a>.</p></div>
     </div>
 
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Сервер платный?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Сумма символическая — 200 рублей навсегда. Это помогает нам поддерживать стабильную работу сервера, быстрые обновления контента и безупречный игровой опыт! Больше информации — <a href="#" onclick="event.preventDefault();go('donate',null)">Донат</a>.</p></div>
+    </div>
+
     <div class="faq-category reveal">📜 Информация о сервере и механиках</div>
 
     <div class="faq-item reveal" onclick="toggleFaq(this)">
@@ -1075,6 +1083,14 @@ nav{
         <span class="faq-chevron">▾</span>
       </button>
       <div class="faq-a"><p>Точной информации нет ни у кого — гарантируем. Даже сам владелец не знает наверняка. Но можете быть уверены в том, что каждый сезон связан с предыдущим и следующим. Потому вайп — лишь необходимая мера очистить мир от скопившегося мусора. Сюжет же не остановить.</p></div>
+    </div>
+
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <button class="faq-q">
+        Есть ли обязательные моды?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a"><p>Нет, но если вы хотите играть на одном уровне с другими игроками — можете скачать заранее созданную сборку модов для удобства на <a href="https://discord.com/channels/1453795062096990272/1453795063569060005" target="_blank">нашем канале в Discord</a>.</p></div>
     </div>
 
     <div class="faq-category reveal">📖 Сюжет, лор и ролеплей</div>
