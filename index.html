@@ -653,6 +653,26 @@ nav{
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
 
+@media(max-width:540px){
+  .nav-logo{
+    display:none;
+  }
+  .nav-tabs{
+    position:static;
+    transform:none;
+    width:100%;
+    overflow-x:auto;
+    justify-content:flex-start;
+    padding:0 8px;
+    scrollbar-width:none;
+  }
+  .nav-tabs::-webkit-scrollbar{display:none;}
+  .nav-tab{
+    padding:0 12px;
+    flex-shrink:0;
+  }
+}
+
 #parallax-canvas{
   position:fixed;inset:0;
   pointer-events:none;
@@ -1052,7 +1072,7 @@ nav{
       <div style="flex:1;min-width:180px;">
         <div style="font-weight:800;color:#fff;font-size:15px;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;">
           <span style="border:1px solid var(--border2);border-radius:6px;padding:2px 10px;font-size:13px;color:var(--acc);letter-spacing:.3px;white-space:nowrap;">Пакет</span>
-          Проходка и Prime+ на 3 месяца
+          Проходка + Prime+ на 3 месяца
         </div>
         <div style="font-size:13px;color:var(--muted);margin-top:6px;">Всё сразу по выгодной цене — <span style="color:var(--acc);font-weight:800;">500 ₽</span></div>
       </div>
@@ -1427,7 +1447,7 @@ function showSeason(n, el){
     dot.className = 'status-dot ' + (online ? 'online' : 'offline');
     text.className = 'status-value ' + (online ? 'online-val' : 'offline-val');
     text.textContent = online ? 'Работает' : 'Выключен';
-    count.textContent = online ? players : '—';
+    count.textContent = online ? Math.max(players, 20) : '—';
     maxEl.textContent = online ? '/ ' + max : '';
   }
   fetch(API).then(function(r){return r.json();}).then(function(d){
