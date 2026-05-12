@@ -689,6 +689,39 @@ nav{
   border:1px solid var(--border);
   border-radius:20px;padding:4px 14px;
 }
+
+.period-selector{
+  display:flex;gap:6px;flex-wrap:wrap;margin-top:18px;
+}
+.period-btn{
+  flex:1;min-width:calc(50% - 3px);
+  padding:8px 6px;border-radius:8px;
+  border:1px solid var(--border);
+  background:rgba(196,64,255,0.04);
+  color:var(--muted);font-size:11px;font-weight:800;
+  cursor:pointer;text-align:center;
+  transition:border-color .2s, color .2s, background .2s;
+  line-height:1.3;
+}
+.period-btn:hover{border-color:var(--border2);color:var(--text);background:rgba(196,64,255,0.09);}
+.period-btn.active{border-color:var(--acc);color:var(--acc);background:rgba(196,64,255,0.13);}
+.period-btn .period-label{display:block;font-size:10px;margin-bottom:2px;}
+.period-btn .period-price{display:block;font-size:13px;font-weight:900;}
+.period-btn.pink-active{border-color:var(--pink);color:var(--pink);background:rgba(224,64,251,0.13);}
+.period-buy-btn{
+  display:block;width:100%;margin-top:12px;
+  padding:11px 0;border-radius:9px;
+  background:linear-gradient(135deg,var(--acc),var(--pink));
+  color:#fff;font-size:13px;font-weight:800;
+  border:none;cursor:pointer;text-align:center;
+  letter-spacing:.3px;
+  transition:opacity .2s, transform .15s, box-shadow .2s;
+  box-shadow:0 4px 16px rgba(196,64,255,0.25);
+  text-decoration:none;
+}
+.period-buy-btn:hover{opacity:.88;transform:translateY(-1px);box-shadow:0 6px 22px rgba(196,64,255,0.35);}
+.period-buy-btn.pink{background:linear-gradient(135deg,var(--pink),#a000d0);}
+.period-buy-btn.pink:hover{box-shadow:0 6px 22px rgba(224,64,251,0.35);}
 </style>
 </head>
 <body>
@@ -746,21 +779,6 @@ nav{
       <span class="tag">Пиратка ✓</span>
     </div>
 
-    <div class="social-row">
-      <a class="social-btn" href="https://youtube.com/@elytrist" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        YouTube
-      </a>
-      <a class="social-btn" href="https://www.tiktok.com/@elytrist02" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
-        TikTok
-      </a>
-      <a class="social-btn" href="https://discord.gg/6qAz8pHfSy" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.031.052a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-        Discord
-      </a>
-    </div>
-
     <div class="hero-video-wrap">
       <iframe src="https://www.youtube.com/embed/qZQVB4WvSgc" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
@@ -785,6 +803,20 @@ nav{
       <button class="gallery-btn next" onclick="galMove(1)">›</button>
     </div>
     <div class="gallery-dots" id="gallery-dots"></div>
+    <div class="social-row" style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border);">
+      <a class="social-btn" href="https://youtube.com/@elytrist" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        YouTube
+      </a>
+      <a class="social-btn" href="https://www.tiktok.com/@elytrist02" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+        TikTok
+      </a>
+      <a class="social-btn" href="https://discord.gg/6qAz8pHfSy" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.031.052a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        Discord
+      </a>
+    </div>
   </div>
 </div>
 
@@ -831,26 +863,6 @@ nav{
         <li>YouTube — @elytrist</li>
         <li>TikTok — @elytrist02</li>
       </ul>
-    </div>
-
-    <div style="margin-top:40px;padding-top:32px;border-top:1px solid var(--border);" class="reveal">
-      <div class="page-head" style="margin-bottom:20px;">
-        <div class="page-icon">🗺️</div>
-        <div>
-          <div class="page-title">Карта мира</div>
-          <div class="page-desc">Интерактивная карта SPLIN SMP в реальном времени</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="map-embed-wrap reveal">
-      <!-- ЗАГЛУШКА: замени YOUR_MAP_URL на адрес карты -->
-      <iframe src="about:blank" title="Карта SPLIN SMP" allowfullscreen></iframe>
-    </div>
-    <div class="map-embed-footer reveal">
-      <span>🗺️ Обновляется в реальном времени</span>
-      <!-- ЗАГЛУШКА: замени href тоже -->
-      <a href="about:blank" target="_blank">Открыть на весь экран ↗</a>
     </div>
 
     <div style="margin-top:40px;padding-top:32px;border-top:1px solid var(--border);" class="reveal">
@@ -940,33 +952,62 @@ nav{
     </div>
 
     <!-- ONE-TIME -->
-    <div class="rule-block-title reveal" style="margin-bottom:16px;">🔓 Навсегда</div>
+    <div class="rule-block-title reveal" style="margin-bottom:16px;">🔓 Разовые покупки</div>
     <div class="donate-cards reveal" style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:36px;">
       <div class="donate-card" style="flex:1;min-width:220px;background:linear-gradient(135deg,rgba(196,64,255,0.10),rgba(92,107,192,0.10));border:1px solid var(--border2);border-radius:16px;padding:24px 22px;">
         <div style="font-size:22px;margin-bottom:8px;">🚪</div>
         <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:6px;">Проходка на сервер</div>
-        <div style="font-size:26px;font-weight:900;color:var(--acc);margin-bottom:12px;">200 ₽</div>
-        <div style="font-size:13px;color:var(--muted);line-height:1.6;">Единоразовый доступ к серверу — навсегда.</div>
+        <div style="font-size:26px;font-weight:900;color:var(--acc);margin-bottom:6px;">100 ₽</div>
+        <div style="display:inline-block;background:linear-gradient(90deg,var(--acc),var(--pink));color:#fff;font-size:11px;font-weight:800;padding:3px 12px;border-radius:20px;letter-spacing:1px;margin-bottom:12px;">НАВСЕГДА</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;">Единоразовый доступ к серверу — навсегда, включая все будущие сезоны.</div>
+      </div>
+
+      <div class="donate-card" style="flex:1;min-width:220px;background:linear-gradient(135deg,rgba(255,80,80,0.10),rgba(80,0,0,0.4));border:1px solid rgba(255,80,80,0.25);border-radius:16px;padding:24px 22px;">
+        <div style="font-size:22px;margin-bottom:8px;">⚡</div>
+        <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:6px;">Быстрый разбан</div>
+        <div style="font-size:26px;font-weight:900;color:#f87171;margin-bottom:12px;">400 ₽</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;">В особых случаях вещи могут быть удалены или в услуге отказано. Не спасает от повторного бана.</div>
+      </div>
+
+      <div class="donate-card" style="flex:1;min-width:220px;background:linear-gradient(135deg,rgba(255,215,0,0.10),rgba(60,40,0,0.5));border:1px solid rgba(255,215,0,0.2);border-radius:16px;padding:24px 22px;">
+        <div style="font-size:22px;margin-bottom:8px;">👑</div>
+        <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:6px;">Основатель красит волосы в любой цвет</div>
+        <div style="font-size:26px;font-weight:900;color:#fbbf24;margin-bottom:12px;">15 000 ₽</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;">Легендарный донат. Владелец лично выполнит условие.</div>
       </div>
     </div>
 
     <!-- MONTHLY -->
-    <div class="rule-block-title reveal" style="margin-bottom:16px;">📅 Подписка на месяц</div>
+    <div class="rule-block-title reveal" style="margin-bottom:6px;">📅 Подписка</div>
+    <div class="reveal" style="font-size:12px;color:var(--muted);margin-bottom:16px;">Больше месяцев = дешевле. Точная цена считается по формуле на сайте оплаты.</div>
     <div class="donate-cards reveal" style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:12px;">
 
       <!-- Prime -->
       <div class="donate-card" style="flex:1;min-width:260px;background:linear-gradient(135deg,rgba(196,64,255,0.13),rgba(30,0,50,0.6));border:1px solid var(--border2);border-radius:16px;padding:24px 22px;position:relative;">
         <div style="font-size:22px;margin-bottom:8px;">⭐</div>
         <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:4px;">Prime</div>
-        <div style="font-size:26px;font-weight:900;color:var(--acc);margin-bottom:6px;">300 ₽</div>
-        <div style="display:inline-block;background:linear-gradient(90deg,var(--acc),var(--pink));color:#fff;font-size:11px;font-weight:800;padding:3px 12px;border-radius:20px;letter-spacing:1px;margin-bottom:12px;">НАВСЕГДА</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--acc);">✦</span> /co i — просмотр взаимодействий с блоками</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--acc);">✦</span> Динамическая карта</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--acc);">✦</span> Новый стиль ника</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--acc);">✦</span> Значок в табе</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--acc);">✦</span> Роль в Discord</li>
+        <div style="font-size:26px;font-weight:900;color:var(--acc);margin-bottom:14px;">200 ₽<span style="font-size:13px;font-weight:600;color:var(--muted);">/мес</span></div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:var(--acc);flex-shrink:0;">✦</span>
+            <span><strong style="color:#fff;">Роль в Discord и значок в майне</strong><br><span style="color:var(--muted);font-size:12px;">Отображается в чате и в табе.</span></span>
+          </li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:var(--acc);flex-shrink:0;">✦</span>
+            <span><strong style="color:#fff;">Команда /co i</strong><br><span style="color:var(--muted);font-size:12px;">Проверка — кто трогал блок или контейнер.</span></span>
+          </li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:var(--acc);flex-shrink:0;">✦</span>
+            <span><strong style="color:#fff;">Динамическая карта</strong><br><span style="color:var(--muted);font-size:12px;">Карта на отдельном сайте — наблюдай за миром, постройками и передвижением игроков в реальном времени.</span></span>
+          </li>
         </ul>
+        <div class="period-selector" id="prime-periods">
+          <div class="period-btn active" onclick="selectPeriod('prime',1,this)"><span class="period-label">1 месяц</span><span class="period-price">200 ₽</span></div>
+          <div class="period-btn" onclick="selectPeriod('prime',3,this)"><span class="period-label">3 месяца</span><span class="period-price">540 ₽</span></div>
+          <div class="period-btn" onclick="selectPeriod('prime',6,this)"><span class="period-label">6 месяцев</span><span class="period-price">960 ₽</span></div>
+          <div class="period-btn" onclick="selectPeriod('prime',12,this)"><span class="period-label">12 месяцев</span><span class="period-price">1680 ₽</span></div>
+        </div>
+        <a href="#" class="period-buy-btn" onclick="event.preventDefault();">Оформить Prime</a>
       </div>
 
       <!-- Prime+ -->
@@ -974,28 +1015,55 @@ nav{
         <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;font-size:11px;font-weight:800;padding:3px 14px;border-radius:20px;letter-spacing:1px;white-space:nowrap;">ЛУЧШИЙ ВЫБОР</div>
         <div style="font-size:22px;margin-bottom:8px;">🌟</div>
         <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:4px;">Prime<span style="color:var(--pink);">+</span></div>
-        <div style="font-size:26px;font-weight:900;color:var(--pink);margin-bottom:14px;">150 ₽<span style="font-size:13px;font-weight:600;color:var(--muted);">/мес</span></div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
-          <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;font-style:italic;"><span style="color:var(--pink);">✦</span> Всё из Prime</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> /co near — просмотр любых взаимодействий рядом с вами</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Градиент ника на выбор</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Градиентный значок в табе</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Скрыть себя на динамической карте</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Префикс в чате</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Чат «Черновик» — новости и планы заранее</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Доступ к категории «Архив»</li>
-          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--pink);">✦</span> Войс-чат с администрацией</li>
+        <div style="font-size:26px;font-weight:900;color:var(--pink);margin-bottom:14px;">300 ₽<span style="font-size:13px;font-weight:600;color:var(--muted);">/мес</span></div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;font-style:italic;"><span style="color:var(--pink);flex-shrink:0;">✦</span> Всё из Prime включено</li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:var(--pink);flex-shrink:0;">✦</span>
+            <span><strong style="color:#fff;">Градиент ника в майне</strong><br><span style="color:var(--muted);font-size:12px;">Отображается в чате и в табе.</span></span>
+          </li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:var(--pink);flex-shrink:0;">✦</span>
+            <span><strong style="color:#fff;">Команда /co near</strong><br><span style="color:var(--muted);font-size:12px;">Список всех действий в радиусе трёх блоков за всю историю сезона.</span></span>
+          </li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:var(--pink);flex-shrink:0;">✦</span>
+            <span><strong style="color:#fff;">Скрыться на карте</strong><br><span style="color:var(--muted);font-size:12px;">Одна команда — и тебя больше не видно на динамической карте.</span></span>
+          </li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:var(--pink);flex-shrink:0;">✦</span>
+            <span><strong style="color:#fff;">Доступ к каналу «Черновик»</strong><br><span style="color:var(--muted);font-size:12px;">Все новости и планы по серверу — до официального выхода.</span></span>
+          </li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:var(--pink);flex-shrink:0;">✦</span>
+            <span><strong style="color:#fff;">Админский войс</strong><br><span style="color:var(--muted);font-size:12px;">Приватный войс, где общается вся команда проекта.</span></span>
+          </li>
+          <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
+            <span style="color:var(--pink);flex-shrink:0;">✦</span>
+            <span><strong style="color:#fff;">Участие в парламенте</strong><br><span style="color:var(--muted);font-size:12px;">Голос на равне со стаффом в обсуждении вопросов по серверу.</span></span>
+          </li>
         </ul>
+        <div class="period-selector" id="primeplus-periods">
+          <div class="period-btn pink-active" onclick="selectPeriod('primeplus',1,this)"><span class="period-label">1 месяц</span><span class="period-price">300 ₽</span></div>
+          <div class="period-btn" onclick="selectPeriod('primeplus',3,this)"><span class="period-label">3 месяца</span><span class="period-price">810 ₽</span></div>
+          <div class="period-btn" onclick="selectPeriod('primeplus',6,this)"><span class="period-label">6 месяцев</span><span class="period-price">1440 ₽</span></div>
+          <div class="period-btn" onclick="selectPeriod('primeplus',12,this)"><span class="period-label">12 месяцев</span><span class="period-price">2520 ₽</span></div>
+        </div>
+        <a href="#" class="period-buy-btn pink" onclick="event.preventDefault();">Оформить Prime+</a>
       </div>
     </div>
 
-    <!-- Bundle discount -->
-    <div class="reveal" style="background:linear-gradient(90deg,rgba(196,64,255,0.12),rgba(224,64,251,0.12));border:1px dashed var(--border2);border-radius:12px;padding:14px 20px;margin-bottom:32px;display:flex;align-items:center;gap:14px;">
-      <div style="font-size:24px;">🎁</div>
-      <div>
-        <div style="font-weight:800;color:#fff;font-size:14px;">Пакет Prime + Prime+</div>
-        <div style="font-size:13px;color:var(--muted);margin-top:3px;">При покупке обоих сразу — скидка <span style="color:var(--acc);font-weight:800;">20%</span></div>
+    <!-- Bundle -->
+    <div class="reveal" style="background:linear-gradient(90deg,rgba(196,64,255,0.12),rgba(224,64,251,0.12));border:1px dashed var(--border2);border-radius:12px;padding:18px 22px;margin-bottom:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div style="font-size:28px;">🎁</div>
+      <div style="flex:1;min-width:180px;">
+        <div style="font-weight:800;color:#fff;font-size:15px;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <span style="border:1px solid var(--border2);border-radius:6px;padding:2px 10px;font-size:13px;color:var(--acc);letter-spacing:.3px;white-space:nowrap;">Пакет</span>
+          Проходка + Prime+ на 3 месяца
+        </div>
+        <div style="font-size:13px;color:var(--muted);margin-top:6px;">Всё сразу по выгодной цене — <span style="color:var(--acc);font-weight:800;">500 ₽</span></div>
       </div>
+      <a href="#" class="period-buy-btn" onclick="event.preventDefault();" style="width:auto;padding:11px 24px;flex-shrink:0;margin-top:0;">Оформить</a>
     </div>
 
     <div class="rule-block reveal"><div class="rule-block-title">Важно</div><ul class="rule-list"><li>За товары и услуги деньги не возвращаем</li><li>Цены могут изменяться без предупреждения</li><li>По всем вопросам — в Telegram или Discord</li></ul></div>
@@ -1051,7 +1119,7 @@ nav{
         Сервер платный?
         <span class="faq-chevron">▾</span>
       </button>
-      <div class="faq-a"><p>Сумма символическая — 200 рублей навсегда. Это помогает нам поддерживать стабильную работу сервера, быстрые обновления контента и безупречный игровой опыт! Больше информации — <a href="#" onclick="event.preventDefault();go('donate',null)">Донат</a>.</p></div>
+      <div class="faq-a"><p>Сумма символическая — 100 рублей навсегда. Это помогает нам поддерживать стабильную работу сервера, быстрые обновления контента и безупречный игровой опыт! Больше информации — <a href="#" onclick="event.preventDefault();go('donate',null)">Донат</a>.</p></div>
     </div>
 
     <div class="faq-category reveal">📜 Информация о сервере и механиках</div>
@@ -1069,7 +1137,7 @@ nav{
         Есть ли карта мира?
         <span class="faq-chevron">▾</span>
       </button>
-      <div class="faq-a"><p>Да! Интерактивная карта встроена прямо на сайте — открой вкладку <strong>Инфо</strong> и прокрути вниз. Там можно полазить по миру и посмотреть что где находится.</p></div>
+      <div class="faq-a"><p>Да, карта есть. Получить к ней доступ могут подписчики Prime и Prime+ в их отдельном канале для донатеров.</p></div>
     </div>
 
     <div class="faq-item reveal" onclick="toggleFaq(this)">
@@ -1394,6 +1462,13 @@ function toggleFaq(item){
   console.log('%c  website was made with love for friends by SFC & SFC Team', s[1]);
   console.log('%c  https://sfc.is-a.dev/', s[2]);
 })();
+
+function selectPeriod(plan, months, el){
+  var isPrime = plan === 'prime';
+  var container = document.getElementById(isPrime ? 'prime-periods' : 'primeplus-periods');
+  container.querySelectorAll('.period-btn').forEach(function(b){ b.className = 'period-btn'; });
+  el.className = isPrime ? 'period-btn active' : 'period-btn pink-active';
+}
 
 document.addEventListener('DOMContentLoaded',function(){
   var s1=document.getElementById('s1');
