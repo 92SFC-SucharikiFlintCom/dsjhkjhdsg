@@ -996,11 +996,11 @@ nav{
     <div class="donate-cards reveal" style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:12px;">
 
       <!-- Prime -->
-      <div class="donate-card" style="flex:1;min-width:260px;background:linear-gradient(135deg,rgba(196,64,255,0.13),rgba(30,0,50,0.6));border:1px solid var(--border2);border-radius:16px;padding:24px 22px;position:relative;">
+      <div class="donate-card" style="flex:1;min-width:260px;background:linear-gradient(135deg,rgba(196,64,255,0.13),rgba(30,0,50,0.6));border:1px solid var(--border2);border-radius:16px;padding:24px 22px;position:relative;display:flex;flex-direction:column;">
         <div style="font-size:22px;margin-bottom:8px;">⭐</div>
         <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:4px;">Prime</div>
         <div style="font-size:26px;font-weight:900;color:var(--acc);margin-bottom:14px;">200 ₽<span style="font-size:13px;font-weight:600;color:var(--muted);">/мес</span></div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;justify-content:space-evenly;">
           <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
             <span style="color:var(--acc);flex-shrink:0;">✦</span>
             <span><strong style="color:#fff;">Роль в Discord и значок в майне</strong><br><span style="color:var(--muted);font-size:12px;">Отображается в чате и в табе.</span></span>
@@ -1014,7 +1014,7 @@ nav{
             <span><strong style="color:#fff;">Динамическая карта</strong><br><span style="color:var(--muted);font-size:12px;">Карта на отдельном сайте — наблюдай за миром, постройками и передвижением игроков в реальном времени.</span></span>
           </li>
         </ul>
-        <div class="period-selector" id="prime-periods">
+        <div class="period-selector" id="prime-periods" style="margin-top:18px;">
           <div class="period-btn active" onclick="selectPeriod('prime',1,this)"><span class="period-label">1 месяц</span><span class="period-price">200 ₽</span></div>
           <div class="period-btn" onclick="selectPeriod('prime',3,this)"><span class="period-label">3 месяца</span><span class="period-price">540 ₽</span></div>
           <div class="period-btn" onclick="selectPeriod('prime',6,this)"><span class="period-label">6 месяцев</span><span class="period-price">960 ₽</span></div>
@@ -1024,12 +1024,12 @@ nav{
       </div>
 
       <!-- Prime+ -->
-      <div class="donate-card" style="flex:1;min-width:260px;background:linear-gradient(135deg,rgba(224,64,251,0.18),rgba(30,0,60,0.7));border:2px solid var(--pink);border-radius:16px;padding:24px 22px;position:relative;">
+      <div class="donate-card" style="flex:1;min-width:260px;background:linear-gradient(135deg,rgba(224,64,251,0.18),rgba(30,0,60,0.7));border:2px solid var(--pink);border-radius:16px;padding:24px 22px;position:relative;display:flex;flex-direction:column;">
         <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;font-size:11px;font-weight:800;padding:3px 14px;border-radius:20px;letter-spacing:1px;white-space:nowrap;">ЛУЧШИЙ ВЫБОР</div>
         <div style="font-size:22px;margin-bottom:8px;">🌟</div>
         <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:4px;">Prime<span style="color:var(--pink);">+</span></div>
         <div style="font-size:26px;font-weight:900;color:var(--pink);margin-bottom:14px;">300 ₽<span style="font-size:13px;font-weight:600;color:var(--muted);">/мес</span></div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;">
           <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;font-style:italic;"><span style="color:var(--pink);flex-shrink:0;">✦</span> Всё из Prime включено</li>
           <li style="font-size:13px;color:var(--text);display:flex;gap:8px;align-items:flex-start;">
             <span style="color:var(--pink);flex-shrink:0;">✦</span>
